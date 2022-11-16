@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Assignment</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="content">
+    <h1 style="text-align: center">Assignment</h1>
+    <h4 style="text-align: center">Please choose your model!</h4>
+    <div class="form">
+        <form action="/" method="POST" style="text-align: center;">
+            <select name="model" id="model">
+                <option value="log">Logistic Regression</option>
+                <option value="time">Moving averages</option>
+            </select> 
+            <input type="submit" value="choose a model">
+        </form>
+    </div>
+</div>
+{% endblock %}

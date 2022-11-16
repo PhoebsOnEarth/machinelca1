@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Logistic Regression</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="content">
+    <br>
+    <h3 style="text-align: center">Logistic Regression</h3>
+    <div class="form">
+    <form action='/logReg' name="form", method="POST", style="text-align: center;">
+      <br>
+      <strong>sepal length: </strong><input type="number" name="x", placeholder="Enter sepal length in cm" required/>
+      <br><br>
+      <strong>sepal width: </strong><input type="number" name="y", placeholder="Enter sepal width in cm" required/>
+      <br><br>
+      <strong>petal length: </strong><input type="number" name="w", placeholder="Enter sepal length in cm" required/>
+      <br><br>
+      <strong>petal width: </strong><input type="number" name="z", placeholder="Enter sepal width in cm" required/>
+      <br><br>
+      <input type="submit" value="Run">
+    </form>
+    <p style="text-align: center;">{{ output }}</p>
+		</div>
+</div>
+
+{% endblock %}

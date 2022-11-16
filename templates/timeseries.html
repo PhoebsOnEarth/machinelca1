@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Assignment</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <br>
+    <h3 style="text-align: center">Moving Averages</h3>
+    <div class="form">
+        <form action="/timeSeries" name="form", method="POST", style="text-align: center;">
+        <br>
+        <strong>Timestamp: </strong><input type="number" name="x", placeholder="Enter an integer" required/>
+        <br><br>
+        <input type="submit" value="Run">
+        </form>
+        <p style="text-align: center;">{{ output }}</p>
+    </div>
+</div>
+{% endblock %}
