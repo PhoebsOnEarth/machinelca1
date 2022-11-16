@@ -1,0 +1,17 @@
+﻿@model RegressionCA.Models.Time
+
+<div class="content time">
+    <br>
+    <h3 style="text-align: center">Moving Averages</h3>
+    <div class="form">
+        <form action="/Home/Time" name="form" , method="POST" style="text-align: center;">
+            <br>
+            <strong>Period: </strong><input type="number" name="x" , placeholder="Enter an interger" required />
+            <br><br>
+            <input type="submit" value="Run">
+        </form>
+        <br />
+        <p style="text-align: center;"><strong>@ViewBag.request</strong></p>
+        <p style="text-align: center;"><strong>@Html.DisplayFor(model => model.preValue)</strong></p>
+    </div>
+</div>

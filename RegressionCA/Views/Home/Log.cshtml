@@ -1,0 +1,23 @@
+﻿@model RegressionCA.Models.Log
+
+<div class="content log">
+    <br>
+    <h3 style="text-align: center">Logistic Regression</h3>
+    <div class="form">
+        <form action="/Home/Log" name="form" , method="POST" style="text-align: center;">
+            <br>
+            <strong>sepal length: </strong><input type="number" name="x" step="0.01" placeholder="Enter sepal length in cm" required />
+            <br><br>
+            <strong>sepal width: </strong><input type="number" name="y" step="0.01" placeholder="Enter sepal width in cm" required />
+            <br><br>
+            <strong>petal length: </strong><input type="number" name="w" step="0.01" placeholder="Enter sepal length in cm" required />
+            <br><br>
+            <strong>petal width: </strong><input type="number" name="z" step="0.01" placeholder="Enter sepal width in cm" required />
+            <br><br>
+            <input type="submit" value="Run">
+        </form>
+        <br />
+        <p style="text-align: center;"><strong>@ViewBag.request</strong></p>
+        <p style="text-align: center;"><strong>@Html.DisplayFor(model => model.preValue)</strong></p>
+    </div>
+</div>
