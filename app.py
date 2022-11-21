@@ -37,15 +37,18 @@ def callModelOne():
 			yValue = request.args.get('y',type=float)
 			wValue = request.args.get('w',type=float)
 			zValue = request.args.get('z',type=float)
-			predict = modelOne.predict([[xValue, yValue, wValue, zValue]])[0]
-			predict = species(str(predict))
-			res = {
-				'xValue':xValue,
-				'yValue':yValue,
-				'wValue':wValue,
-				'zValue':zValue,
-				'preValue': predict
-			}
+			if xValue and xValue > 0 and yValue and yValue > 0 and wValue and wValue > 0 and zValue and zValue > 0:
+				predict = modelOne.predict([[xValue, yValue, wValue, zValue]])[0]
+				predict = species(str(predict))
+				res = {
+					'xValue':xValue,
+					'yValue':yValue,
+					'wValue':wValue,
+					'zValue':zValue,
+					'preValue': predict
+				}
+			else:
+				res = {'preValue': 'Invalid input'}
 		except:
 			res = {'preValue': 'Invalid input'}
 		finally:
@@ -69,10 +72,13 @@ def callModelTwo():
 	if request.method == 'GET':
 		try:
 			xValue = request.args.get('x', type=int)
-			res = {
-				'xValue':xValue,
-				'preValue': 'Moving average: ' + str(df_time_series[xValue])
-			}
+			if xValue and xValue >= 7:
+				res = {
+					'xValue':xValue,
+					'preValue': 'Moving average: ' + str(df_time_series[xValue])
+				}
+			else:
+				res = {'preValue': 'Invalid input'}
 		except:
 			res = {'preValue': 'Invalid input'}
 		finally:
